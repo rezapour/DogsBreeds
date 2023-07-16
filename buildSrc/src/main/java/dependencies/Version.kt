@@ -9,7 +9,7 @@ object Version {
     const val lifecycle="2.6.1"
     const val nav="2.5.3"
     const val glide="4.12.0"
-    const val room="2.5.1"
+    const val room="2.5.2"
     const val glide_compose="1.0.0-alpha.1"
     const val nav_version = "2.6.0"
     const val nav_hilt="1.0.0"

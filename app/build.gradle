@@ -122,6 +122,8 @@ dependencies {
     kapt Dependencies.room_compiler
     implementation Dependencies.room_runtime_ktx
     implementation Dependencies.room_paging
+    // optional - Kotlin Extensions and Coroutines support for Room
+    implementation("androidx.room:room-ktx:2.5.2")
 
     implementation Dependencies.glide_compose
 

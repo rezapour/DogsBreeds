@@ -6,4 +6,7 @@
     <string name="error_server_error">Failed to connect to server. Please try again.</string>
     <string name="error_default_message">Something went wrong!</string>
     <string name="error_filter_empty">There is no data to show please change your filter.</string>
+
+    <string name="breeds_list_title">Breeds List</string>
+    <string name="retry">retry</string>
 </resources>

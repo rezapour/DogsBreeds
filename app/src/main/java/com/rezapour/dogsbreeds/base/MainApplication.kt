@@ -1,4 +1,4 @@
-package com.rezapour.dogsbreeds
+package com.rezapour.dogsbreeds.base
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
