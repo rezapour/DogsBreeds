@@ -6,6 +6,7 @@ import com.rezapour.dogsbreeds.DataState
 import com.rezapour.dogsbreeds.R
 import com.rezapour.dogsbreeds.base.dispatcher.DispatcherProvider
 import com.rezapour.dogsbreeds.domain.model.BreedDomain
+import com.rezapour.dogsbreeds.domain.usecase.BreedDetailUseCase
 import com.rezapour.dogsbreeds.domain.usecase.FavoriteUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -17,6 +18,7 @@ import javax.inject.Inject
 @HiltViewModel
 class FavoriteViewModel @Inject constructor(
     private val favoriteUseCase: FavoriteUseCase,
+    private val breedDetailUseCase: BreedDetailUseCase,
     private val dispatcherProvider: DispatcherProvider
 ) : ViewModel() {
 
@@ -50,5 +52,9 @@ class FavoriteViewModel @Inject constructor(
         viewModelScope.launch(dispatcherProvider.main) {
             favoriteUseCase.deleteFavorite(breed)
         }
+    }
+
+    fun navigateToBreedDetail(breed:BreedDomain){
+        breedDetailUseCase.upDataData(breed)
     }
 }

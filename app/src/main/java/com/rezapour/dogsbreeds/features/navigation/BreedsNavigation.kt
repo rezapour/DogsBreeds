@@ -21,9 +21,8 @@ fun NavGraphBuilder.breedsNavigation(navController: NavController) {
     composable(Destinations.FavoriteListScreen.route) {
         FavoriteScreen(
             viewModel = hiltViewModel(),
-            onBackPressed = { navController.popBackStack() }) {
-
-        }
+            onBackPressed = { navController.popBackStack() },
+            onNavigateToBreedDetail = { navController.navigate(route = Destinations.ImageListScreen.route) })
     }
 
     composable(Destinations.ImageListScreen.route) {

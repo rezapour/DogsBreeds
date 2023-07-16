@@ -11,7 +11,7 @@ import com.rezapour.dogsbreeds.features.breedslist.Content
 fun FavoriteScreen(
     viewModel: FavoriteViewModel,
     onBackPressed: () -> Unit,
-    onItemPressed: () -> Unit
+    onNavigateToBreedDetail: () -> Unit
 ) {
     val uiState = viewModel.uiState.collectAsState().value
 
@@ -31,6 +31,9 @@ fun FavoriteScreen(
                 if (breed.favorite) viewModel.deleteFavorite(breed) else viewModel.addFavorite(
                     breed
                 )
-            }, onItemClicked = {})
+            }, onItemClicked = { breedDomain ->
+                viewModel.navigateToBreedDetail(breedDomain)
+                onNavigateToBreedDetail()
+            })
     }
 }
