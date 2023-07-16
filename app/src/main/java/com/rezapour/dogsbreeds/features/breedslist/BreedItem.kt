@@ -88,11 +88,11 @@ private fun BreedItemPreview() {
     DogsBreedsTheme() {
         Column(verticalArrangement = Arrangement.spacedBy(Dimensions.paddingMedium)) {
             BreedItem(
-                breedDomain = BreedDomain("australian", "shepherd", false),
+                breedDomain = BreedDomain("shepherd australian", "australian","shepherd", false),
                 checked = false,
                 onFavoriteClicked = {})
             BreedItem(
-                breedDomain = BreedDomain("australian", "shepherd", false),
+                breedDomain = BreedDomain("shepherd australian", "australian","shepherd", false),
                 checked = true,
                 onFavoriteClicked = {})
         }

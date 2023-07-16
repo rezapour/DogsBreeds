@@ -13,10 +13,10 @@ interface FavoriteDao {
     @Insert
     suspend fun insertFavorite(breed: FavoriteDataBaseEntity)
 
-    //TODO Delete base on the breed couse problems maybe base on id would be better
-    @Query("DELETE FROM favorite WHERE  breed= :breed")
-    suspend fun deleteFavorite(breed: String)
+
+    @Query("DELETE FROM favorite WHERE  title= :title")
+    suspend fun deleteFavorite(title: String)
 
     @Query("SELECT * FROM FAVORITE")
-     fun getFavorites(): Flow<List<FavoriteDataBaseEntity>>
+    fun getFavorites(): Flow<List<FavoriteDataBaseEntity>>
 }

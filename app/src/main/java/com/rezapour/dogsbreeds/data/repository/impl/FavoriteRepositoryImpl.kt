@@ -26,6 +26,6 @@ class FavoriteRepositoryImpl @Inject constructor(
     }
 
     override suspend fun deleteFavorite(breed: Breed) {
-        dao.deleteFavorite(breed.name)
+        dao.deleteFavorite(breed.title)
     }
 }

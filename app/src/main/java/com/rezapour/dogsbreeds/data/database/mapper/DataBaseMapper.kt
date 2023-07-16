@@ -11,7 +11,7 @@ class DataBaseMapper @Inject constructor() {
     }
 
     fun breedToFavoriteDataBaseEntity(domain: Breed): FavoriteDataBaseEntity = with(domain) {
-        FavoriteDataBaseEntity(name = name, type = type)
+        FavoriteDataBaseEntity(name = name, type = type, title = domain.title)
     }
 
     fun favoriteDataBaseEntityListToBreedList(entities: List<FavoriteDataBaseEntity>): List<Breed> =

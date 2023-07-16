@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import com.rezapour.dogsbreeds.data.network.mapper.Mappers
 import com.rezapour.dogsbreeds.base.ui.theme.DogsBreedsTheme
 import com.rezapour.dogsbreeds.base.navigation.AppNavigation
 import dagger.hilt.android.AndroidEntryPoint

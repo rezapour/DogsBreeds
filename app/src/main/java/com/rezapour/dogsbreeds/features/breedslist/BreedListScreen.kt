@@ -27,7 +27,11 @@ fun BreedsListScreen(viewModel: BreedsListViewModel, onNavigateToFavoriteScreen:
             modifier = Modifier.padding(paddingValues),
             uiState = uiState,
             retry = {},
-            onFavoriteClicked = {})
+            onFavoriteClicked = { breed ->
+                if (breed.favorite) viewModel.deleteFavorite(breed) else viewModel.addFavorite(
+                    breed
+                )
+            })
     }
 }
 

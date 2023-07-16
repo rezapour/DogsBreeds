@@ -40,8 +40,8 @@ private fun BreedsListPreview() {
     DogsBreedsTheme() {
         BreedsList(
             breeds = listOf(
-                BreedDomain(name = "basenji", favorite = true),
-                BreedDomain(name = "buhund", type = "norwegian", favorite = false)
+                BreedDomain(title = "basenji",name = "basenji", favorite = true),
+                BreedDomain(title = "norwegian buhund",name = "buhund", type = "norwegian", favorite = false)
             ), onFavoriteClicked = {}
         )
     }
