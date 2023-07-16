@@ -1,21 +1,25 @@
-package com.rezapour.dogsbreeds.features.breedslist
+package com.rezapour.dogsbreeds.features.favoritelist
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
+import com.rezapour.dogsbreeds.features.breedslist.Content
 
 @Composable
-fun BreedsListScreen(viewModel: BreedsListViewModel, onNavigateToFavoriteScreen: () -> Unit) {
-
+fun FavoriteScreen(
+    viewModel: FavoriteViewModel,
+    onBackPressed: () -> Unit,
+    onItemPressed: () -> Unit
+) {
     val uiState = viewModel.uiState.collectAsState().value
 
     Scaffold(
         topBar = {
             TopBar(
                 modifier = Modifier,
-                onFavoriteClicked = onNavigateToFavoriteScreen
+                onBackClicked = onBackPressed
             )
         }
     ) { paddingValues ->
