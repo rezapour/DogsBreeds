@@ -1,5 +1,6 @@
 package com.rezapour.dogsbreeds.features.breedslist
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -30,7 +31,8 @@ fun BreedItem(
     modifier: Modifier = Modifier,
     breedDomain: BreedDomain,
     checked: Boolean,
-    onFavoriteClicked: (BreedDomain) -> Unit
+    onFavoriteClicked: (BreedDomain) -> Unit,
+    onItemClicked: (BreedDomain) -> Unit
 ) {
     Surface(
         modifier = modifier.shadow(Dimensions.shadow),
@@ -40,7 +42,10 @@ fun BreedItem(
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(Dimensions.paddingMedium),
+                .padding(Dimensions.paddingMedium)
+                .clickable {
+                    onItemClicked(breedDomain)
+                },
             horizontalArrangement = Arrangement.Center,
             verticalAlignment = Alignment.CenterVertically
         ) {
@@ -88,13 +93,13 @@ private fun BreedItemPreview() {
     DogsBreedsTheme() {
         Column(verticalArrangement = Arrangement.spacedBy(Dimensions.paddingMedium)) {
             BreedItem(
-                breedDomain = BreedDomain("shepherd australian", "australian","shepherd", false),
+                breedDomain = BreedDomain("shepherd australian", "australian", "shepherd", false),
                 checked = false,
-                onFavoriteClicked = {})
+                onFavoriteClicked = {}, onItemClicked = {})
             BreedItem(
-                breedDomain = BreedDomain("shepherd australian", "australian","shepherd", false),
+                breedDomain = BreedDomain("shepherd australian", "australian", "shepherd", false),
                 checked = true,
-                onFavoriteClicked = {})
+                onFavoriteClicked = {}, onItemClicked = {})
         }
     }
 }

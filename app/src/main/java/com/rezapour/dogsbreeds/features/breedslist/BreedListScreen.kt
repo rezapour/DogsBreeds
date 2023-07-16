@@ -7,7 +7,11 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 
 @Composable
-fun BreedsListScreen(viewModel: BreedsListViewModel, onNavigateToFavoriteScreen: () -> Unit) {
+fun BreedsListScreen(
+    viewModel: BreedsListViewModel,
+    onNavigateToFavoriteScreen: () -> Unit,
+    onNavigateToBreedDetail: () -> Unit
+) {
 
     val uiState = viewModel.uiState.collectAsState().value
 
@@ -27,6 +31,9 @@ fun BreedsListScreen(viewModel: BreedsListViewModel, onNavigateToFavoriteScreen:
                 if (breed.favorite) viewModel.deleteFavorite(breed) else viewModel.addFavorite(
                     breed
                 )
+            }, onItemClicked = { breedDomain ->
+                viewModel.navigateToBreedDetail(breedDomain)
+                onNavigateToBreedDetail()
             })
     }
 }

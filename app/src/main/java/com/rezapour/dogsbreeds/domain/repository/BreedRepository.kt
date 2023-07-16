@@ -6,4 +6,6 @@ import kotlinx.coroutines.flow.Flow
 interface BreedRepository {
 
     suspend fun getBreeds(): Flow<List<Breed>>
+
+    suspend fun getBreedsImages(breedName:String):List<String>
 }

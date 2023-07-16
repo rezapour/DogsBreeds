@@ -19,7 +19,17 @@ class BreedRepositoryImpl @Inject constructor(
     private val networkMapper: NetworkMapper
 ) : BreedRepository {
     override suspend fun getBreeds(): Flow<List<Breed>> = flow {
-        Log.d("REZAAPP",networkMapper.breedNetworkEntityToBreed(apiProvider.getBreeds()).toString())
+        Log.d(
+            "REZAAPP",
+            networkMapper.breedNetworkEntityToBreed(apiProvider.getBreeds()).toString()
+        )
         emit(networkMapper.breedNetworkEntityToBreed(apiProvider.getBreeds()))
     }.flowOn(dispatcherProvider.io)
+
+    override suspend fun getBreedsImages(breedName: String): List<String> =
+        withContext(dispatcherProvider.io) {
+            apiProvider.getBreedsImages(breedName).message
+        }
+
+
 }

@@ -10,4 +10,5 @@
     <string name="breeds_list_title">Breeds List</string>
     <string name="retry">retry</string>
     <string name="favorite_list_title">Favorites</string>
+    <string name="image_list_title">Images</string>
 </resources>

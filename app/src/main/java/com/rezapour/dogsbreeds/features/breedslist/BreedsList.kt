@@ -17,7 +17,8 @@ import com.rezapour.dogsbreeds.domain.model.BreedDomain
 fun BreedsList(
     modifier: Modifier = Modifier,
     breeds: List<BreedDomain>,
-    onFavoriteClicked: (BreedDomain) -> Unit
+    onFavoriteClicked: (BreedDomain) -> Unit,
+    onItemClicked:(BreedDomain)->Unit
 ) {
     LazyColumn(
         modifier = modifier.padding(Dimensions.paddingSmall),
@@ -28,7 +29,8 @@ fun BreedsList(
             BreedItem(
                 breedDomain = breed,
                 checked = breed.favorite,
-                onFavoriteClicked = onFavoriteClicked
+                onFavoriteClicked = onFavoriteClicked,
+                onItemClicked = onItemClicked
             )
         }
     }
@@ -42,7 +44,7 @@ private fun BreedsListPreview() {
             breeds = listOf(
                 BreedDomain(title = "basenji",name = "basenji", favorite = true),
                 BreedDomain(title = "norwegian buhund",name = "buhund", type = "norwegian", favorite = false)
-            ), onFavoriteClicked = {}
+            ), onFavoriteClicked = {}, onItemClicked = {}
         )
     }
 }

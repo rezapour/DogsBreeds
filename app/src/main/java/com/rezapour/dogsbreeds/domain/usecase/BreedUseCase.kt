@@ -26,4 +26,8 @@ class BreedUseCase @Inject constructor(
             breeds.map { breed -> mapper.breedToBreedDomain(breed, favorite.contains(breed)) }
         }
     }
+
+    suspend fun getBreedImages(breedName: String): List<String> =
+        breedRepository.getBreedsImages(breedName)
+
 }

@@ -31,6 +31,6 @@ fun FavoriteScreen(
                 if (breed.favorite) viewModel.deleteFavorite(breed) else viewModel.addFavorite(
                     breed
                 )
-            })
+            }, onItemClicked = {})
     }
 }

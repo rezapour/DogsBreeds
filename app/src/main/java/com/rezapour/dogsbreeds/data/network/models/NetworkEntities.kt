@@ -7,3 +7,8 @@ data class BreedsNetworkEntity(
     @Expose @SerializedName("message") var message: Any?,
     @Expose @SerializedName("status") var status: String? = null
 )
+
+data class BreedsImageNetworkEntity(
+    @Expose @SerializedName("message") var message: List<String>,
+    @Expose @SerializedName("status") var status: String? = null
+)

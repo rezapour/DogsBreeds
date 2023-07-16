@@ -6,13 +6,16 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import com.rezapour.dogsbreeds.features.breedslist.BreedsListScreen
 import com.rezapour.dogsbreeds.features.favoritelist.FavoriteScreen
+import com.rezapour.dogsbreeds.features.imagelist.ImageListScreen
 
 
 fun NavGraphBuilder.breedsNavigation(navController: NavController) {
     composable(Destinations.BreedsListScreen.route) {
         BreedsListScreen(
             hiltViewModel(),
-            onNavigateToFavoriteScreen = { navController.navigate(route = Destinations.FavoriteListScreen.route) })
+            onNavigateToFavoriteScreen = { navController.navigate(route = Destinations.FavoriteListScreen.route) },
+            onNavigateToBreedDetail = { navController.navigate(route = Destinations.ImageListScreen.route) }
+        )
     }
 
     composable(Destinations.FavoriteListScreen.route) {
@@ -21,5 +24,11 @@ fun NavGraphBuilder.breedsNavigation(navController: NavController) {
             onBackPressed = { navController.popBackStack() }) {
 
         }
+    }
+
+    composable(Destinations.ImageListScreen.route) {
+        ImageListScreen(
+            viewModel = hiltViewModel(),
+            onBackClicked = { navController.popBackStack() })
     }
 }

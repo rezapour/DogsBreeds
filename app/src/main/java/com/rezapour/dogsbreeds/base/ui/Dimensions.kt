@@ -12,4 +12,5 @@ object Dimensions {
     val spaceBySmall = 8.dp
     val topBarFontSize = 20.sp
     val topBarIconSize = 25.dp
+    val imageSize = 200.dp
 }

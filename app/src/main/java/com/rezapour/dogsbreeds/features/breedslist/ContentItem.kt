@@ -12,7 +12,8 @@ fun Content(
     modifier: Modifier = Modifier,
     uiState: DataState<List<BreedDomain>>,
     retry: () -> Unit,
-    onFavoriteClicked: (BreedDomain) -> Unit
+    onFavoriteClicked: (BreedDomain) -> Unit,
+    onItemClicked: (BreedDomain) -> Unit
 ) {
     when (uiState) {
         is DataState.Error -> ErrorComponent(
@@ -25,7 +26,8 @@ fun Content(
         is DataState.Success -> BreedsList(
             modifier = modifier,
             breeds = uiState.data,
-            onFavoriteClicked = onFavoriteClicked
+            onFavoriteClicked = onFavoriteClicked,
+            onItemClicked = onItemClicked
         )
     }
 }
