@@ -5,7 +5,7 @@ data class Breed(
     val type: String? = null
 ) {
     val title: String
-        get() = if (type != null) "$type  $name" else name
+        get() = if (type != null) "$type $name" else name
 }
 
 

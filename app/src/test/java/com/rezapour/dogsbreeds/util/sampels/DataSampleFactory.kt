@@ -12,4 +12,6 @@ object DataSampleFactory {
             Breed(name = "bulldog", type = "french")
         )
     }
+
+    fun getBreed()=Breed(name="bulldog",type = "boston")
 }
