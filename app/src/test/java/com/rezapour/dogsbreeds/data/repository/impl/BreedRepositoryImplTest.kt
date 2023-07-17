@@ -51,6 +51,5 @@ class BreedRepositoryImplTest {
 
         val response = breedRepository.getBreedsImages("")
         assertThat(response).isEqualTo(DataSampleFactory.getListOfImages())
-
     }
 }
