@@ -1,4 +1,4 @@
-package com.rezapour.dogsbreeds.features.breedslist
+package com.rezapour.dogsbreeds.features.compos
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier

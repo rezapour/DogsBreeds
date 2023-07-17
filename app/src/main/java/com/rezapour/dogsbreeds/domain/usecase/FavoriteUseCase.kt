@@ -11,7 +11,7 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class FavoriteUseCase @Inject constructor(
+open class FavoriteUseCase @Inject constructor(
     private val favoriteRepository: FavoriteRepository,
     private val mapper: DomainMapper
 ) {

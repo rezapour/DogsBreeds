@@ -8,7 +8,7 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class BreedDetailUseCase @Inject constructor(private val breedRepository: BreedRepository) {
+open class BreedDetailUseCase @Inject constructor(private val breedRepository: BreedRepository) {
 
     private val _breedState: MutableStateFlow<BreedDomain> =
         MutableStateFlow(BreedDomain("", "", "", false))

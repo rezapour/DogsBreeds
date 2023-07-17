@@ -3,6 +3,7 @@ package com.rezapour.dogsbreeds.features.imagelist
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.rezapour.dogsbreeds.DataState
+import com.rezapour.dogsbreeds.R
 import com.rezapour.dogsbreeds.base.dispatcher.DispatcherProvider
 import com.rezapour.dogsbreeds.data.exception.DataProviderException
 import com.rezapour.dogsbreeds.domain.model.BreedDomain
@@ -27,21 +28,21 @@ class BreedDetailViewModel @Inject constructor(
     val uiState: StateFlow<DataState<List<String>>> = _uiState
 
     init {
-        viewModelScope.launch(dispatcherProvider.io) {
-            breedUseCase.breedState.collect { breed ->
-                loadData(breed)
-            }
-        }
+        loadData()
     }
-
-    fun loadData(breedName: BreedDomain) {
+    fun loadData() {
         _uiState.value = DataState.Loading
         viewModelScope.launch(dispatcherProvider.main) {
-            try {
-                _uiState.value = DataState.Success(breedUseCase.getBreedImages(breedName))
-            } catch (e: DataProviderException) {
-                _uiState.value = DataState.Error(e.messageId)
+            breedUseCase.breedState.collect { breed ->
+                try {
+                    _uiState.value = DataState.Success(breedUseCase.getBreedImages(breed))
+                } catch (e: DataProviderException) {
+                    _uiState.value = DataState.Error(e.messageId)
+                } catch (e: Exception) {
+                    _uiState.value = DataState.Error(R.string.error_default_message)
+                }
             }
+
         }
     }
 }

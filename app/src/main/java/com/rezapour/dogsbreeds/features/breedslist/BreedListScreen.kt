@@ -5,6 +5,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
+import com.rezapour.dogsbreeds.features.compos.Content
 
 @Composable
 fun BreedsListScreen(
@@ -26,7 +27,7 @@ fun BreedsListScreen(
         Content(
             modifier = Modifier.padding(paddingValues),
             uiState = uiState,
-            retry = {},
+            retry = {viewModel.loadData()},
             onFavoriteClicked = { breed ->
                 if (breed.favorite) viewModel.deleteFavorite(breed) else viewModel.addFavorite(
                     breed

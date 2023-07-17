@@ -1,4 +1,4 @@
-package com.rezapour.dogsbreeds.features.breedslist
+package com.rezapour.dogsbreeds.features.compos
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement

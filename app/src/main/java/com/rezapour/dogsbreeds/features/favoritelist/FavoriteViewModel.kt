@@ -54,7 +54,7 @@ class FavoriteViewModel @Inject constructor(
         }
     }
 
-    fun navigateToBreedDetail(breed:BreedDomain){
+    fun navigateToBreedDetail(breed: BreedDomain) {
         breedDetailUseCase.upDataData(breed)
     }
 }

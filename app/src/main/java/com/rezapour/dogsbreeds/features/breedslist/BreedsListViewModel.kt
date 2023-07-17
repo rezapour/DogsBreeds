@@ -34,9 +34,9 @@ class BreedsListViewModel @Inject constructor(
         loadData()
     }
 
-    private fun loadData() {
+    fun loadData() {
         _uiState.value = DataState.Loading
-        viewModelScope.launch {
+        viewModelScope.launch(dispatcherProvider.io) {
             breedUseCase.getBreed().catch {
                 _uiState.value = DataState.Error((it as DataProviderException).messageId)
 

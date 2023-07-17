@@ -5,7 +5,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
-import com.rezapour.dogsbreeds.features.breedslist.Content
+import com.rezapour.dogsbreeds.features.compos.Content
 
 @Composable
 fun FavoriteScreen(

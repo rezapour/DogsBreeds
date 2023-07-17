@@ -12,13 +12,13 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class BreedUseCase @Inject constructor(
+open class BreedUseCase @Inject constructor(
     private val breedRepository: BreedRepository,
     private val favoriteRepository: FavoriteRepository,
     private val mapper: DomainMapper
 ) {
 
-    suspend fun getBreed(): Flow<List<BreedDomain>> {
+    open suspend fun getBreed(): Flow<List<BreedDomain>> {
         return combine(
             breedRepository.getBreeds(),
             favoriteRepository.getFavorite()

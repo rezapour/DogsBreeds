@@ -34,8 +34,8 @@ fun ImageListScreen(
         Content(
             modifier = Modifier.padding(paddingValues),
             uiState = uiState,
-            retry = {},
-            onImageClicked = {})
+            retry = { viewModel.loadData() },
+        )
     }
 
 }
@@ -45,7 +45,6 @@ fun Content(
     modifier: Modifier = Modifier,
     uiState: DataState<List<String>>,
     retry: () -> Unit,
-    onImageClicked: (BreedDomain) -> Unit
 ) {
     when (uiState) {
         is DataState.Error -> ErrorComponent(
