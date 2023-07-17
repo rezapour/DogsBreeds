@@ -16,7 +16,7 @@ open class FavoriteUseCase @Inject constructor(
     private val mapper: DomainMapper
 ) {
 
-    fun getFavorite(): Flow<List<BreedDomain>> =
+    open fun getFavorite(): Flow<List<BreedDomain>> =
         favoriteRepository.getFavorite()
             .map { breeds -> breeds.map { breed -> mapper.breedToBreedDomain(breed, true) } }
 

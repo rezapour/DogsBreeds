@@ -3,7 +3,6 @@ package com.rezapour.dogsbreeds.domain.usecase
 import com.google.common.truth.Truth.assertThat
 import com.rezapour.dogsbreeds.domain.model.BreedDomain
 import com.rezapour.dogsbreeds.domain.repository.BreedRepository
-import com.rezapour.dogsbreeds.util.sampels.DataSampleFactory
 import com.rezapour.dogsbreeds.util.sampels.DomainDataSampleFactory
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
