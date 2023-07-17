@@ -9,7 +9,7 @@ import javax.inject.Inject
 class NetworkMapper @Inject constructor() {
     fun breedNetworkEntityToBreed(breedsNetworkEntity: BreedsNetworkEntity): List<Breed> {
         val breedList: ArrayList<Breed> = ArrayList()
-        val element: JsonElement = JsonParser().parse(breedsNetworkEntity.message.toString())
+        val element: JsonElement = breedsNetworkEntity.message
         val obj = element.asJsonObject //since you know it's a JsonObject
 
         val entries = obj.entrySet() //will return members of your object
