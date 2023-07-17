@@ -9,5 +9,4 @@ object DataBaseSampleFactory {
         name = "bulldog",
         type = "boston"
     )
-
 }

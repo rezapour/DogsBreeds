@@ -1,5 +1,6 @@
 package com.rezapour.dogsbreeds.util.sampels
 
+import com.rezapour.dogsbreeds.data.network.models.BreedsImageNetworkEntity
 import com.rezapour.dogsbreeds.domain.model.Breed
 
 object DataSampleFactory {
@@ -14,4 +15,7 @@ object DataSampleFactory {
     }
 
     fun getBreed()=Breed(name="bulldog",type = "boston")
+
+    fun getListOfImages() =
+        listOf("https://images.dog.ceo/breeds/affenpinscher/n02110627_10185.jpg")
 }
